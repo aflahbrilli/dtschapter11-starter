@@ -20,6 +20,8 @@ public class CaloriesAdapter extends RecyclerView.Adapter<CaloriesAdapter.ViewHo
     private List<Calory> calories;
     private OnCaloryClickedListener listener;
 
+
+
     public CaloriesAdapter(Context context, OnCaloryClickedListener listener) {
         this.context = context;
         this.listener = listener;
@@ -41,6 +43,8 @@ public class CaloriesAdapter extends RecyclerView.Adapter<CaloriesAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Calory calory = calories.get(position);
         // TODO: Bind object calory dengan holder
+        holder.foodText.setText(calory.getFood());
+        holder.caloryText.setText(String.valueOf(calory.getCalory()));
 
         holder.bind(calory, listener);
     }
